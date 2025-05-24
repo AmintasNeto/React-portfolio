@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './qualifications.css';
+import { Courses, Experiences } from './Data';
 
 const Qualifications = () => {
     const [ToggleTab, setToggleTab] = useState(0);
@@ -25,57 +26,81 @@ const Qualifications = () => {
 
             <div className="qualification__sections">
                 <div className={`qualification__content ${ToggleTab === 0 ? "qualification__content-active" : ""}`}>
-                    <div className="qualification__data">
-                        <div>
-                            <h3 className="qualification__title">Computer Science Bachelor's Degree</h3>
-                            <span className="qualification__subtitle">Universidade Federal de Sergipe</span>
-                            <div className="qualification__calendar">
-                                <i className="uil uil-calendar-alt"></i>{" "}
-                                2020 - Present
+                    {Courses.map((item, index) => 
+                        index % 2 === 0 ? (
+                            <div className="qualification__data">
+                            <div>
+                                <h3 className="qualification__title">{item.title}</h3>
+                                <span className="qualification__subtitle">{item.place}</span>
+                                <div className="qualification__calendar">
+                                    <i className="uil uil-calendar-alt"></i>{" "}
+                                    {item.year}
+                                </div>
+                            </div>
+
+                            <div>
+                                <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
                             </div>
                         </div>
+                    ) : (
+                        <div className="qualification__data">
+                            <div></div>
 
-                        <div>
-                            <span className="qualification__rounder"></span>
-                            <span className="qualification__line"></span>
-                        </div>
-                    </div>
+                            <div>
+                                <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
+                            </div>
 
-                    <div className="qualification__data">
-                        <div></div>
-
-                        <div>
-                            <span className="qualification__rounder"></span>
-                            <span className="qualification__line"></span>
-                        </div>
-
-                        <div>
-                            <h3 className="qualification__title">HTM, CSS and JavaScript basics</h3>
-                            <span className="qualification__subtitle">Alura</span>
-                            <div className="qualification__calendar">
-                                <i className="uil uil-calendar-alt"></i>{" "}
-                                2023
+                            <div>
+                                <h3 className="qualification__title">{item.title}</h3>
+                                <span className="qualification__subtitle">{item.place}</span>
+                                <div className="qualification__calendar">
+                                    <i className="uil uil-calendar-alt"></i>{" "}
+                                    {item.year}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
 
                 <div className={`qualification__content ${ToggleTab === 1 ? "qualification__content-active" : ""}`}>
-                    <div className="qualification__data">
-                        <div>
-                            <h3 className="qualification__title">Fullstack developer</h3>
-                            <span className="qualification__subtitle">EcoDiet Team</span>
-                            <div className="qualification__calendar">
-                                <i className="uil uil-calendar-alt"></i>{" "}
-                                2023 - 2024
+                    {Experiences.map((item, index) => 
+                        index % 2 === 0 ? (
+                            <div className="qualification__data">
+                            <div>
+                                <h3 className="qualification__title">{item.title}</h3>
+                                <span className="qualification__subtitle">{item.place}</span>
+                                <div className="qualification__calendar">
+                                    <i className="uil uil-calendar-alt"></i>{" "}
+                                    {item.year}
+                                </div>
+                            </div>
+
+                            <div>
+                                <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
                             </div>
                         </div>
+                    ) : (
+                        <div className="qualification__data">
+                            <div></div>
 
-                        <div>
-                            <span className="qualification__rounder"></span>
-                            <span className="qualification__line"></span>
+                            <div>
+                                <span className="qualification__rounder"></span>
+                                <span className="qualification__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 className="qualification__title">{item.title}</h3>
+                                <span className="qualification__subtitle">{item.place}</span>
+                                <div className="qualification__calendar">
+                                    <i className="uil uil-calendar-alt"></i>{" "}
+                                    {item.year}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
