@@ -70,6 +70,11 @@
     transform: translate(0.25rem);
 }
 
+.span__works {
+    display: block;
+    text-align: center;
+}
+
 @media screen and (max-width: 992px) {
     .work__container {
         gap: 1.25rem;

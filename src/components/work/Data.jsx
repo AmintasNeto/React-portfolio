@@ -43,7 +43,7 @@ export const projectsData = [
         category: 'web',
         repository: 'https://github.com/AmintasNeto/EmployeeManagementSystemSolution.git',
         description: "It's a management system focused in manage employees designaations, sanctions, overtime, etc.",
-        technologies: [".Net", "MVC Framework", "Blazor", "PostgreSql"]
+        technologies: [".Net, ", "MVC Framework, ", "Blazor, ", "PostgreSql"]
     },
     {
         id: 3,
@@ -53,7 +53,7 @@ export const projectsData = [
         link: 'https://figma-clone-chi-green.vercel.app/',
         repository: 'https://github.com/AmintasNeto/figma_clone.git',
         description: "It's a image editor e creator like figma with support to mutiple users edit the same file at same time.",
-        technologies: ["Next.Js", "React.Js", "tailwind", "Liveblocks"]
+        technologies: ["Next.Js, ", "React.Js, ", "Tailwind, ", "Liveblocks"]
     }  
 ]
 

@@ -36,11 +36,15 @@ const Works = () => {
             })}
         </div>
 
-        <div className="work__container conteiner grid">
-            {projects.map((item) => {
-                return <WorkItems item={item} key={item.id} />
-            })}
-        </div>
+        {projects.length > 0 ? 
+            (<div className="work__container conteiner grid">
+                {projects.map((item) => {
+                    return <WorkItems item={item} key={item.id} />
+                })}
+            </div>) : (
+                <span className='span__works'>Nothing to list.</span>
+            )
+        }
     </div>
   )
 }
