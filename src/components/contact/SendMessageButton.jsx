@@ -1,6 +1,21 @@
-export const SendMessageButton = () => {
+import { ClipLoader } from 'react-spinners';
+
+export const SendMessageButton = (props) => {
+    const cssLoading= {
+        display: "flex",
+        margin: "0px 60px"
+    };
+
     return (
-        <button href="#contact" className="button button--flex">
+        <button href="#contact" className="button button--flex" disabled={props.isLoading}>
+            {props.isLoading ? <ClipLoader color="#ffffff" cssOverride={cssLoading} /> : <ButtonContent />}
+        </button>
+    );
+}
+
+const ButtonContent = () => {
+    return (
+        <>
             Send message
             
             <svg
@@ -20,6 +35,6 @@ export const SendMessageButton = () => {
                 fill="var(--conteiner-color)"></path>
 
             </svg>
-        </button>
+        </>
     );
 }

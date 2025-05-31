@@ -1,25 +1,31 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser'
 import './contact.css'
 import { SendMessageButton } from './SendMessageButton';
 import { toast } from 'react-toastify';
 
 const Contact = () => {
+    const [isLoading, setIsLoading] = useState(false);
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         if (form.current[0].value !== "" && form.current[1].value !== "" && form.current[2].value !== "") {
+            setIsLoading(true);
+
             emailjs.sendForm(
                 "service_4q8nwiu",
                 "template_gx91d7h",
                 form.current,
                 "99fbclK57GUrvPh4o"
             ).then(() => {
-                toast.success("Message sended!");
                 e.target.reset();
+                
+                setIsLoading(false);
+                toast.success("Message sended!");
             }).catch(() => {
+                setIsLoading(false);
                 toast.error("An error ocurred while trying to send the message.");
             });
         } else {
@@ -82,7 +88,7 @@ const Contact = () => {
                             className='contact__form-input' placeholder='Insert your message'></textarea>
                         </div>
 
-                        <SendMessageButton />
+                        <SendMessageButton isLoading={isLoading} />
                     </form>
                 </div>
         </div>
