@@ -1,6 +1,5 @@
 .about__container {
     grid-template-columns: repeat(2, 1fr);
-    align-items: center;
     column-gap: 4rem;
 }
 
@@ -12,7 +11,12 @@
 
 .about__description {
     padding: 0 4rem 0 0;
-    margin-bottom: var(--mb-2-5);
+    margin-bottom: var(--mb-1);
+}
+
+.about__description_last {
+    padding: 0 4rem 0 0;
+    margin-bottom: var(--mb-2);
 }
 
 @media screen and (max-width: 992px) {
@@ -31,7 +35,16 @@
 
     .about__description {
         padding: 0 5rem;
-        margin-bottom: var(--mb-2);
+        margin-bottom: var(--mb-1);
+    }
+
+    .about__description_last {
+    padding: 0 4rem 0 0;
+    margin-bottom: var(--mb-1-5);
+}
+
+    .about__button {
+        text-align: center;
     }
   }
   
